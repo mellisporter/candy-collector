@@ -6,8 +6,13 @@ from django.http import HttpResponse
 # import 
 from main_app.models import Candy
 
-# MODELS
+from django.views.generic.edit import CreateView
 
+
+# MODELS
+class CandyCreate(CreateView):
+    model= Candy
+    fields = '__all__'
 # class Candy:
 #     def __init__(self, name, house, description):
 #         self.name= name
