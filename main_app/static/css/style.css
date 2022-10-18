@@ -23,5 +23,12 @@ li {
     color: orange;
 }
 
+.splash {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://www.2foodtrippers.com/wp-content/uploads/2021/05/American-Candy-Birdseye-View-735x580.jpg.webp');
+    background-size: cover;
+}
+
 
   

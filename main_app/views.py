@@ -18,7 +18,7 @@ candy = [
 
 #define the home view
 def home(request):
-    return HttpResponse('Hello world, this is the candy app!')
+    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
