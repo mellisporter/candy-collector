@@ -13,6 +13,7 @@ from django.views.generic.edit import CreateView
 class CandyCreate(CreateView):
     model= Candy
     fields = '__all__'
+    success_url = '/candy/'
 # class Candy:
 #     def __init__(self, name, house, description):
 #         self.name= name
