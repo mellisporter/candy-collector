@@ -6,7 +6,8 @@ from django.http import HttpResponse
 # import 
 from main_app.models import Candy
 
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 
 # MODELS
@@ -14,6 +15,14 @@ class CandyCreate(CreateView):
     model= Candy
     fields = '__all__'
     success_url = '/candy/'
+
+class CandyUpdate(UpdateView):
+    model= Candy
+    fields = '__all__'
+
+class CandyDelete(DeleteView):
+    model = Candy
+    success_url='/candy/'
 # class Candy:
 #     def __init__(self, name, house, description):
 #         self.name= name

@@ -9,6 +9,10 @@
     <p>Where I Got It: {{ candy.house }}</p>
     <p>Description: {{ candy.description }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'candy_update' candy.id %}">Edit</a>
+    <a href="{% url 'candy_delete' candy.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}
