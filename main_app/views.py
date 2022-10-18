@@ -30,3 +30,8 @@ def candy_index(request):
     candy = Candy.objects.all()
     return render(request, 'candy/index.html' , {'candy' : candy})
 
+def candy_detail(request, candy_id):
+  candy = Candy.objects.get(id=candy_id)
+  return render(request, 'candy/detail.html', { 'candy': candy })
+
+

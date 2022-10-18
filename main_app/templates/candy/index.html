@@ -1,17 +1,19 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-<h1>Cat List</h1>
+<h1>Candy Bag</h1>
 
 {% for candy in candy %}
 <div class="index">
 <div class="card">
+  <a href="/cats/{{ cat.id }}">
   <div class="card-content">
     <span class="card-title">{{ candy.name }}</span>
     <p>Where I Got It: {{ candy.house }}</p>
     <p>Description: {{ candy.description }}</p>
   </div>
 </div>
+</a>
 </div>
 {% endfor %} 
 {% endblock %}
