@@ -8,4 +8,4 @@ def home(request):
     return HttpResponse('Hello world, this is the candy app!')
 
 def about(request):
-    return HttpResponse("This is the about page")
+    return render(request, 'about.html')
