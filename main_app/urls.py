@@ -12,6 +12,7 @@ urlpatterns = [
     path('candy/<int:pk>/delete/', views.CandyDelete.as_view(), name="candy_delete"),
     path('candy/<int:candy_id>/add_ingredients/' , views.add_ingredients, name='add_ingredients'),
     path('brand/create/', views.BrandCreate.as_view(), name='brand_create'),
+    path('brand/' , views.brand_index, name='index'),
 
 ]
 

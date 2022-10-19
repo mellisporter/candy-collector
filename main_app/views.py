@@ -31,7 +31,7 @@ class CandyDelete(DeleteView):
 class BrandCreate(CreateView):
     model = Brand
     fields = '__all__'
-    success_url= '/candy'
+    success_url= '/brand'
 
 # class Candy:
 #     def __init__(self, name, house, description):
@@ -54,6 +54,10 @@ def about(request):
 def candy_index(request):
     candy = Candy.objects.all()
     return render(request, 'candy/index.html' , {'candy' : candy})
+
+def brand_index(request):
+    brand = Brand.objects.all()
+    return render(request, 'brand/index.html', {'brand': brand})
 
 def candy_detail(request, candy_id):
   candy = Candy.objects.get(id=candy_id)
