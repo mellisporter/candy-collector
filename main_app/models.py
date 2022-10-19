@@ -30,3 +30,9 @@ class Ingredients(models.Model):
 
 class Brand(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('brand_detail', kwargs={'pk': self.id})

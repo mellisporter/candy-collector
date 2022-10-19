@@ -12,6 +12,8 @@ from main_app.models import Brand
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
+from django.views.generic.detail import DetailView
+
 
 
 # MODELS
@@ -32,6 +34,20 @@ class BrandCreate(CreateView):
     model = Brand
     fields = '__all__'
     success_url= '/brand'
+
+class BrandUpdate(UpdateView):
+    model= Brand
+    fields = '__all__'
+
+class BrandDelete(DeleteView):
+    model = Brand
+    success_url='/brand/'
+
+class BrandDetail(DetailView):
+    model = Brand
+    template_name = 'brand/detail.html'
+
+
 
 # class Candy:
 #     def __init__(self, name, house, description):
@@ -65,6 +81,7 @@ def candy_detail(request, candy_id):
   ingredients_form = IngredientsForm()
   return render(request, 'candy/detail.html', { 'candy': candy , 'ingredients_form': 
   ingredients_form })
+
 
 def add_ingredients(request, candy_id):
     # creates the ModelForm using data
