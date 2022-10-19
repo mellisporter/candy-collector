@@ -1,10 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.http import HttpResponse
 
 # import 
 from main_app.models import Candy
+
+from .forms import IngredientsForm
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -47,6 +49,18 @@ def candy_index(request):
 
 def candy_detail(request, candy_id):
   candy = Candy.objects.get(id=candy_id)
-  return render(request, 'candy/detail.html', { 'candy': candy })
+  # calling the ingredients form 
+  ingredients_form = IngredientsForm()
+  return render(request, 'candy/detail.html', { 'candy': candy , 'ingredients_form': 
+  ingredients_form })
+
+def add_ingredients(request, candy_id):
+    # creates the ModelForm using data
+    form = IngredientsForm(request.POST)
+    if form.is_valid():
+        new_ingredients = form.save(commit=False)
+        new_ingredients.candy_id = candy_id
+        new_ingredients.save()
+    return redirect('detail' , candy_id=candy_id)
 
 

@@ -16,6 +16,11 @@
 </div>
 <!-- ingredients model -->
 <div class="col s6">
+  <form action="{% url 'add_ingredients' candy.id %}" method="post">
+
+    {% csrf_token %} {{ ingredients_form.as_p }}
+    <input type="submit" class="btn" value="Add Ingredient" />
+  </form>
   <table class="striped">
     <thead>
       <tr>
@@ -34,4 +39,7 @@
   </table>
 </div>
 </div>
+<script>
+
+</script>
 {% endblock %}
