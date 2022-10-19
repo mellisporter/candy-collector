@@ -24,3 +24,6 @@ class Ingredients(models.Model):
 
     def __str__(self):
         return self.ing1
+
+    class Meta:
+        ordering = ['-exp_date']
