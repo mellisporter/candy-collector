@@ -14,5 +14,24 @@
     <a href="{% url 'candy_delete' candy.id %}">Delete</a>
   </div>
 </div>
-
+<!-- ingredients model -->
+<div class="col s6">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Expiration Date</th>
+        <th>Ingredients</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ingredients in candy.ingredients_set.all %}
+      <tr>
+        <td>{{ingredients.date}}</td>
+        <td>{{ingredients.ing1}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
 {% endblock %}

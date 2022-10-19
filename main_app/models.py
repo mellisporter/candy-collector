@@ -18,7 +18,7 @@ class Candy(models.Model):
 
 class Ingredients(models.Model):
     ing1= models.CharField(max_length=100)
-    exp_date= models.DateField()
+    exp_date= models.DateField('Expiration Date')
 
     candy= models.ForeignKey(Candy, on_delete=models.CASCADE)
 
