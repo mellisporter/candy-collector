@@ -27,3 +27,6 @@ class Ingredients(models.Model):
 
     class Meta:
         ordering = ['-exp_date']
+
+class Brand(models.Model):
+    name = models.CharField(max_length=50)

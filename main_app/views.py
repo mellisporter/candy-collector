@@ -8,6 +8,8 @@ from main_app.models import Candy
 
 from .forms import IngredientsForm
 
+from main_app.models import Brand
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
@@ -25,6 +27,12 @@ class CandyUpdate(UpdateView):
 class CandyDelete(DeleteView):
     model = Candy
     success_url='/candy/'
+
+class BrandCreate(CreateView):
+    model = Brand
+    fields = '__all__'
+    success_url= '/candy'
+
 # class Candy:
 #     def __init__(self, name, house, description):
 #         self.name= name
