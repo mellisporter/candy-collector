@@ -16,6 +16,6 @@ urlpatterns = [
     path('brand/<int:pk>/update/', views.BrandUpdate.as_view(), name='brand_update'),
     path('brand/<int:pk>/delete', views.BrandDelete.as_view(), name='brand_delete'),
     path('brand/<int:pk>/', views.BrandDetail.as_view(), name='brand_detail'),
-
+    path('candy/<int:candy_id>/assoc_brand/<int:brand_id>/', views.assoc_brand, name='assoc_brand'),
 ]
 

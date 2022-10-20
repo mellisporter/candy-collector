@@ -95,3 +95,6 @@ def add_ingredients(request, candy_id):
     return redirect('detail' , candy_id=candy_id)
 
 
+def assoc_brand(request, candy_id, brand_id):
+  Candy.objects.get(id=brand_id).brand.add(brand_id)
+  return redirect('detail', candy_id=candy_id)
