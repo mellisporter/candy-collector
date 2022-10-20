@@ -67,7 +67,7 @@
             </span>
           </div>
           <div class="card-action">
-            <form action="" method="post">
+            <form action="{% url 'assoc_brand' candy.id brand.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn">Add</button>
             </form>
