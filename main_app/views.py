@@ -77,10 +77,12 @@ def brand_index(request):
 
 def candy_detail(request, candy_id):
   candy = Candy.objects.get(id=candy_id)
+  # get brands not assigned
+  brands_candy_doesnt_have= Brand.objects.exclude(id__in = candy.brand.all().values_list('id'))
   # calling the ingredients form 
   ingredients_form = IngredientsForm()
   return render(request, 'candy/detail.html', { 'candy': candy , 'ingredients_form': 
-  ingredients_form })
+  ingredients_form , 'brands': brands_candy_doesnt_have})
 
 
 def add_ingredients(request, candy_id):
